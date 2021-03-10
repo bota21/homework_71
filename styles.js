@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 10,
+    marginTop: 50
   },
   wrapper: {
     width: "100%",
@@ -14,12 +15,18 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 5,
   },
-  flatWrapper: {
-    flex: 1,
-  },
   image: {
     width: 50,
     height: 50,
     marginRight: 20,
   },
+  text: {
+    width: "80%",
+  },
+  spinner: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)"
+  }
 });

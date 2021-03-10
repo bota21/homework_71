@@ -18,7 +18,6 @@ const reducer = (state = initialState, action) => {
       const arr = action.data.map((i) => {
         return { id: i.data.id, title: i.data.title, image: i.data.thumbnail };
       });
-
       return { ...state, list: arr, loading: false };
     case FETCH_REQUEST_ERROR:
       return { ...state, error: action.error, loading: false };
