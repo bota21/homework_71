@@ -3,7 +3,7 @@ import { ActivityIndicator, FlatList, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import List from "../components/List";
 import { styles } from "../styles";
-import { fetchRedditList } from "../store/actions";
+import { fetchRedditList, nextFetch } from "../store/actions";
 
 const Main = () => {
   const list = useSelector((state) => state.list);
@@ -13,15 +13,14 @@ const Main = () => {
   useEffect(() => {
     dispatch(fetchRedditList());
   }, [dispatch]);
-
+  
   return (
     <View style={styles.container}>
       <FlatList
-        style={styles.flatWrapper}
         data={list}
-        renderItem={(item) => (
-          <List title={item.item.title} image={item.item.image} />
-        )}
+        renderItem={(item) => {
+          return <List title={item.item.title} image={item.item.image} />;
+        }}
       />
       {loading ? (
         <ActivityIndicator
